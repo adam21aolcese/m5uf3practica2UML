@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="diagrama1">
+  <ClassDiagramComponents>
+    <Class name="Autor" package="" visibility="public" xPosition="39.0" yPosition="78.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="nacionalitat" type="String" visibility="private"/>
+        <Field name="dataNaixement" type="LocalDate" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Lector" package="" visibility="public" xPosition="367.0" yPosition="38.0">
+      <Fields>
+        <Field name="llibres" type="List&lt;Llibre&gt;" visibility="private"/>
+        <Field name="maxLlibresPrestec" type="int" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Biblioteca" package="" visibility="public" xPosition="48.0" yPosition="328.0">
+      <Fields>
+        <Field name="copies" type="List&lt;Llibre&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Llibre" package="" visibility="public" xPosition="302.0" yPosition="430.0">
+      <Fields>
+        <Field name="identificador" type="int" visibility="private"/>
+        <Field name="estat" type="int" visibility="private"/>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="tipus" type="String" visibility="private"/>
+        <Field name="editorial" type="String" visibility="private"/>
+        <Field name="any" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="escriu" source="Autor" target="Llibre" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="té" source="Lector" target="Llibre" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="té copies de llibres" source="Biblioteca" target="Llibre" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="té" source="Llibre" target="Autor" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
